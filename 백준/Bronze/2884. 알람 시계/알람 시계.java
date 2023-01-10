@@ -1,24 +1,23 @@
-import java.util.Scanner;
- 
+import java.io.*;
+
 public class Main {
-	public static void main(String[] args) {
-    
-		Scanner in = new Scanner(System.in);
-		
-		int H = in.nextInt(); // 시
-		int M = in.nextInt(); // 분
-		in.close();
-		
-		if(M < 45) {
-			H--;		// 시(hour) 1 감소
-			M= 60 - (45 - M); 	// 분(min) 감소
-			if(H < 0) {
-				H = 23;
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String[] str = br.readLine().split(" ");
+		int a = Integer.parseInt(str[0]);
+		int b = Integer.parseInt(str[1]);
+		// 45분 이상이면
+        br.close();
+		if (b < 45) {
+			b = 60-(45- b);
+			a = a-1;
+			if(a<0) {
+				a= 23;
 			}
-			System.out.println(H + " " + M);
-		}
-		else {
-			System.out.println(H + " " + (M - 45));
+            System.out.println(a + " " + b);
+		// 45분 이하면
+		} else {
+			System.out.println(a + " " + (b-45));
 		}
 	}
 }
