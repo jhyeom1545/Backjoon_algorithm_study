@@ -7,6 +7,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String[] arr = br.readLine().split(" ");
+        br.close();
 		int num1 = Integer.parseInt(arr[0]);
 		int num2 = Integer.parseInt(arr[1]);
 		int num3 = Integer.parseInt(arr[2]);
